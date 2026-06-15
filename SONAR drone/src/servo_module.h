@@ -1,4 +1,4 @@
 ﻿void initServo();
-void moveServo();
+void moveServo(int position);
 void stopServo();
 bool isServoStopped();
