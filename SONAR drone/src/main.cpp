@@ -1,18 +1,24 @@
-#include <Arduino.h>
-
-// put function declarations here:
-int myFunction(int, int);
+﻿#include <Arduino.h>
+#include "servo_module.h"
 
 void setup() {
-  // put your setup code here, to run once:
-  int result = myFunction(2, 3);
+  Serial.begin(115200);
+  Serial.println("Servo ready");
+  Serial.println("Send 'q' to stop the servo.");
+  initServo();
 }
 
 void loop() {
-  // put your main code here, to run repeatedly:
+  if (Serial.available()) {
+    char incoming = Serial.read();
+    if (incoming == 'q' || incoming == 'Q') {
+      stopServo();
+      Serial.println("Servo stopped.");
+    }
+  }
+
+  if (!isServoStopped()) {
+    moveServo();
+  }
 }
 
-// put function definitions here:
-int myFunction(int x, int y) {
-  return x + y;
-}

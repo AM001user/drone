@@ -1,0 +1,11 @@
+{
+  "python.defaultInterpreterPath": "C:/Users/adamm/AppData/Local/Microsoft/WindowsApps/python3.13.exe",
+  "code-runner.executorMap": {
+    "python": "C:/Users/adamm/AppData/Local/Microsoft/WindowsApps/python3.13.exe",
+    "python3": "C:/Users/adamm/AppData/Local/Microsoft/WindowsApps/python3.13.exe"
+  },
+  "code-runner.executorMapByFileExtension": {
+    ".py": "C:/Users/adamm/AppData/Local/Microsoft/WindowsApps/python3.13.exe"
+  },
+  "code-runner.runInTerminal": true
+}
