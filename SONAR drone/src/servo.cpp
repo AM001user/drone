@@ -30,7 +30,7 @@ bool isServoStopped() {
   return servoStopped;
 }
 
-void moveServo() {
+void moveServo(int position) {
   if (!myservo.attached()) {
     return;
   }
@@ -40,7 +40,10 @@ void moveServo() {
     return;
   }
 
+  // Limiter la position entre 0 et 180 (limites du servo)
+  if (position < 0) position = 0;
+  if (position > 180) position = 180;
+
   lastMoveMillis = currentMillis;
-  currentPositionIndex = (currentPositionIndex + 1) % (sizeof(servoPositions) / sizeof(servoPositions[0]));
-  myservo.write(servoPositions[currentPositionIndex]);
+  myservo.write(position);
 }
